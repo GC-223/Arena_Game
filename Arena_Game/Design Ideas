@@ -1,0 +1,89 @@
+
+FIGHTER baseClass
+
+Member Variables
+    Name
+    
+    enum for stats { health, attack, defense }
+    int Array for stats { health, attack, defense }
+    
+    attackType
+    
+Member Functions
+    Constructor
+    
+    
+    getters
+        getHealth
+        
+        get otheer stats
+        
+        getName
+        
+    
+    subtractHealth - after taking damage subtract health
+    parameter of damage given
+    health -= damage
+    
+    
+    check if still alive
+    if health > 0 then still alive
+    
+    
+    a function to compute how much damage an attack does
+    takes parameter of attackType, fighterAttack stat, defenderDefense stat
+    
+    some sort of equation to come up with amount of damage an attack does
+    
+    
+    a function to compute if attack hits or not
+    takes parameter of attackType,
+    gets accuracy based on attackType
+        RNG based on accuracy
+        
+        
+    setter for attackType
+    
+    
+    
+
+
+
+
+Player Class
+
+Has every single function in parent class
+
+setters for name and stats ( when i implement a level up option )
+
+
+
+
+
+
+Attack Class/struct
+
+Member Variables
+
+an enum for different attackTypes = { quick, normal, heavy }
+
+attackType
+
+accuracy stat depending on attackType -
+    Very basic for now
+    Heavy attack 33%
+    normal 50%
+    light 67%
+    
+
+setter for attackType
+takes in an integer variable
+    switch statement to select attackType
+    
+setter for accuracy
+parameter - attackType
+    sets accuracy based on attackType
+
+
+
+

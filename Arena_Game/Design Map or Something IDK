@@ -1,0 +1,140 @@
+
+
+
+
+We are first just going to have the game start off as a text based Arena fighting game
+
+
+    Think about the way that a pokemon fight works
+    
+
+
+We will need a player and We will need an enemy
+    These are actually pretty related
+    So, these should inherit from a base class of FIGHTER
+    
+
+lets talk about our FIGHTER base class
+
+    Fighter will need a few things -
+        
+        
+        Variables
+            NAME
+            
+            int Array[] stats = { health, attack, defense, speed }
+            
+            LATER
+            Weapon weapon
+            
+            LATER
+            implement more, but just keep that for now
+            Armor Array[] armor = { helmet, chest, lowerBody }
+            
+            
+            
+            
+            LATER
+            Not totally sure on the implementation of inventory
+            
+            Maybe an enum for inventory
+                Inventory should be -
+                    Weapon, Health Potions, Attribute boost potions, Armor
+                    
+                And then perhaps an array that coordinates with inventory enum
+                
+            
+            LATER
+            Maybe Armor should be its own class
+            
+            
+            
+            Maybe an enum for attributes/stats
+                HP, Attack, Defense, Speed
+            And then perhaps an array that coordinates with the Attributes/Stats enum
+                int array[] { 100 (health), 50(attack), 60(defense), 30(speed) }
+                
+                
+            
+            maybe an enum for attackTypes
+            or a separate struct/class for attackTypes
+                attackTypes struct would contain -
+                    Damage
+                    Accuracy
+            
+            
+        
+        
+        Functions
+            gonna need a constructor to set all of the members
+            
+            getter for health
+            
+            getter for all stats
+            
+            
+            
+            LATER
+            getter for weapon
+            getter for armor?
+            
+            
+            a function to deal with losing health
+            it should take as a parameter, the amount of damage an enemy attack did
+            and updates health -
+                health -= attackDamage
+            
+            
+            a function to calculate amount of damage an attack will do
+            parameters - attackType, fighterAttack stat, defender Defense stat
+            
+                switch statement to compute damage based on attackType
+            
+                does some sort of calculation using all of these to get a damage output
+            
+                returns damageOutput
+                
+            
+            
+            
+        
+            
+Now lets talk about our player class
+
+playerClass inherits everything from base class
+
+
+
+
+
+
+a Basic run through of the game
+
+user is presented with text detailing -
+    oponent stats
+    user stats
+    
+Asks user if they want to start fight
+
+user goes first
+    user is presented with 3 attack options -
+        1. heavy
+        2. normal
+        3. quick
+        
+    user inputs attackDecision
+    
+    Functions to determine damage output and if attack Hits/Misses
+    
+    if attack Hits
+        subtract damage output from health of enemy
+    else
+        say attack missed
+        
+Enemy Turn
+    much of the same, except that everything is determined by an RNG
+    
+
+Fight ends when -
+    Enemy health hits 0 - USER WINS
+    Player health hits 0 - LOSES
